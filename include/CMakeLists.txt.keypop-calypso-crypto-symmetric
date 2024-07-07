@@ -1,0 +1,22 @@
+# *************************************************************************************************
+# Copyright (c) 2024 Calypso Networks Association https://calypsonet.org/                         *
+#                                                                                                 *
+# This program and the accompanying materials are made available under the                        *
+# terms of the MIT License which is available at https://opensource.org/licenses/MIT.             *
+#                                                                                                 *
+# SPDX-License-Identifier: MIT                                                                    *
+# *************************************************************************************************/
+
+# FetchContent added in CMake 3.11, downloads during the configure step
+# FetchContent_MakeAvailable was added in CMake 3.14; simpler usage
+INCLUDE(FetchContent)
+
+# Checkout Keypop Calypso CryptoL egacy Sam Cpp Api dependency
+FetchContent_Declare(
+        KeypopCalypsoCryptoLegacySamCppApi
+        DOWNLOAD_EXTRACT_TIMESTAMP true
+        GIT_REPOSITORY https://github.com/eclipse-keypop/keypop-calypso-crypto-symmetric-cpp-api
+        GIT_TAG develop-0.1.1
+)
+
+FetchContent_MakeAvailable(KeypopCalypsoCryptoLegacySamCppApi)
