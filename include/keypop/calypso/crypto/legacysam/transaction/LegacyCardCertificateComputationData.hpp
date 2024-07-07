@@ -1,11 +1,12 @@
-/**************************************************************************************************
- * Copyright (c) 2024 Calypso Networks Association https://calypsonet.org/                        *
- *                                                                                                *
- * This program and the accompanying materials are made available under the                       *
- * terms of the MIT License which is available at https://opensource.org/licenses/MIT.            *
- *                                                                                                *
- * SPDX-License-Identifier: MIT                                                                   *
- **************************************************************************************************/
+/******************************************************************************
+ * Copyright (c) 2025 Calypso Networks Association https://calypsonet.org/    *
+ *                                                                            *
+ * This program and the accompanying materials are made available under the   *
+ * terms of the MIT License which is available at                             *
+ * https://opensource.org/licenses/MIT.                                       *
+ *                                                                            *
+ * SPDX-License-Identifier: MIT                                               *
+ ******************************************************************************/
 
 #pragma once
 
@@ -38,7 +39,8 @@ public:
      * @param cardPublicKey The 64-byte array representing the public key on the
      *        <strong>secp256r1</strong> curve.
      * @return The current instance.
-     * @throw IllegalArgumentException If the provided key is null or out of range.
+     * @throw IllegalArgumentException If the provided key is null or out of
+     * range.
      * @since 0.5.0
      */
     virtual LegacyCardCertificateComputationData&
@@ -46,50 +48,61 @@ public:
         = 0;
 
     /**
-     * Sets the start date of the validity period of the certificate's public key.
+     * Sets the start date of the validity period of the certificate's public
+     * key.
      *
-     * <p>The start date is optional. If it is not defined, the certificate is not subject to a
-     * start date constraint.
+     * <p>The start date is optional. If it is not defined, the certificate is
+     * not subject to a start date constraint.
      *
      * @param startDate The start date.
      * @return The current instance.
      * @throw IllegalArgumentException If date is null.
      * @since 0.5.0
      */
-    virtual LegacyCardCertificateComputationData& setStartDate(std::shared_ptr<tm> startDate) = 0;
+    virtual LegacyCardCertificateComputationData&
+    setStartDate(std::shared_ptr<tm> startDate)
+        = 0;
 
     /**
      * Sets the end date of the validity period of the certificate's public key.
      *
-     * <p>The end date is optional. If it is not defined, the certificate is not subject to an end
-     * date constraint.
+     * <p>The end date is optional. If it is not defined, the certificate is not
+     * subject to an end date constraint.
      *
      * @param endDate The end date.
      * @return The current instance.
      * @throw IllegalArgumentException If date is null.
      * @since 0.5.0
      */
-    virtual LegacyCardCertificateComputationData& setEndDate(std::shared_ptr<tm> endDate) = 0;
+    virtual LegacyCardCertificateComputationData&
+    setEndDate(std::shared_ptr<tm> endDate)
+        = 0;
 
     /**
      * Sets the AID of the autonomous PKI application of the target card.
      *
      * <p>The <b>aid</b> field cannot contain only zero bytes.
      *
-     * @param aid The AID value as a 5 to 16 bytes byte array. Must not contain only zero bytes.
+     * @param aid The AID value as a 5 to 16 bytes byte array. Must not contain
+     * only zero bytes.
      * @return The current instance.
-     * @throw IllegalArgumentException If the provided AID is null, out of range, or contains only
-     *        zero bytes.
+     * @throw IllegalArgumentException If the provided AID is null, out of
+     * range, or contains only zero bytes.
      * @since 0.5.0
      */
-    virtual LegacyCardCertificateComputationData setCardAid(const std::vector<uint8_t>& aid) = 0;
+    virtual LegacyCardCertificateComputationData
+    setCardAid(const std::vector<uint8_t>& aid)
+        = 0;
 
     /**
-     * Sets the serial number of the card for which the certificate is being generated.
+     * Sets the serial number of the card for which the certificate is being
+     * generated.
      *
-     * @param serialNumber The serial number of the card as an 8-byte byte array.
+     * @param serialNumber The serial number of the card as an 8-byte byte
+     * array.
      * @return The current instance.
-     * @throw IllegalArgumentException If the provided argument is null or out of range.
+     * @throw IllegalArgumentException If the provided argument is null or out
+     * of range.
      * @since 0.5.0
      */
     virtual LegacyCardCertificateComputationData
@@ -97,22 +110,25 @@ public:
         = 0;
 
     /**
-     * Sets the startup info of the card for which the certificate is being generated.
+     * Sets the startup info of the card for which the certificate is being
+     * generated.
      *
-     * @param startupInfo The 7-byte byte array representing the startup info for the card
-     *     certificate.
+     * @param startupInfo The 7-byte byte array representing the startup info
+     * for the card certificate.
      * @return The current instance.
-     * @throw IllegalArgumentException If the provided argument is null or out of range.
+     * @throw IllegalArgumentException If the provided argument is null or out
+     * of range.
      * @since 0.5.0
      */
     virtual LegacyCardCertificateComputationData&
     setCardStartupInfo(const std::vector<uint8_t>& startupInfo);
 
     /**
-     * Returns the certificate generated by the SAM after the execution of the "PSO Compute
-     * Certificate" command.
+     * Returns the certificate generated by the SAM after the execution of the
+     * "PSO Compute Certificate" command.
      *
-     * @return A 316-byte byte array or null if the computation has not been performed.
+     * @return A 316-byte byte array or null if the computation has not been
+     * performed.
      * @since 0.5.0
      */
     virtual const std::vector<uint8_t>& getCertificate() = 0;

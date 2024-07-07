@@ -1,11 +1,12 @@
-/**************************************************************************************************
- * Copyright (c) 2024 Calypso Networks Association https://calypsonet.org/                        *
- *                                                                                                *
- * This program and the accompanying materials are made available under the                       *
- * terms of the MIT License which is available at https://opensource.org/licenses/MIT.            *
- *                                                                                                *
- * SPDX-License-Identifier: MIT                                                                   *
- **************************************************************************************************/
+/******************************************************************************
+ * Copyright (c) 2025 Calypso Networks Association https://calypsonet.org/    *
+ *                                                                            *
+ * This program and the accompanying materials are made available under the   *
+ * terms of the MIT License which is available at                             *
+ * https://opensource.org/licenses/MIT.                                       *
+ *                                                                            *
+ * SPDX-License-Identifier: MIT                                               *
+ ******************************************************************************/
 
 #pragma once
 
@@ -20,9 +21,11 @@ namespace transaction {
 
 /**
  * Contains the input/output data of the {@link
- * FreeTransactionManager::prepareGenerateCardAsymmetricKeyPair(KeyPairContainer) method.
+ * FreeTransactionManager::prepareGenerateCardAsymmetricKeyPair(KeyPairContainer)
+ * method.
  *
- * <p>A key pair consists of a byte array containing the public key and a private key values.
+ * <p>A key pair consists of a byte array containing the public key and a
+ * private key values.
  *
  * @since 0.5.0
  */

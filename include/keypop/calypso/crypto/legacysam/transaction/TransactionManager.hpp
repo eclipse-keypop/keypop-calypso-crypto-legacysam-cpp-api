@@ -1,11 +1,12 @@
-/**************************************************************************************************
- * Copyright (c) 2024 Calypso Networks Association https://calypsonet.org/                        *
- *                                                                                                *
- * This program and the accompanying materials are made available under the                       *
- * terms of the MIT License which is available at https://opensource.org/licenses/MIT.            *
- *                                                                                                *
- * SPDX-License-Identifier: MIT                                                                   *
- **************************************************************************************************/
+/******************************************************************************
+ * Copyright (c) 2025 Calypso Networks Association https://calypsonet.org/    *
+ *                                                                            *
+ * This program and the accompanying materials are made available under the   *
+ * terms of the MIT License which is available at                             *
+ * https://opensource.org/licenses/MIT.                                       *
+ *                                                                            *
+ * SPDX-License-Identifier: MIT                                               *
+ ******************************************************************************/
 
 #pragma once
 
@@ -28,11 +29,13 @@ public:
      * Process all previously prepared commands.
      *
      * @return The current instance.
-     * @throw ReaderIOException If a communication error with the card reader or SAM reader occurs.
+     * @throw ReaderIOException If a communication error with the card reader or
+     * SAM reader occurs.
      * @throw SamIOException If a communication error with the SAM occurs.
-     * @throw InvalidSignatureException If a signature associated to a prepared signature
-     *        verification command is invalid.
-     * @throw UnexpectedCommandStatusException If a command returns an unexpected status.
+     * @throw InvalidSignatureException If a signature associated to a prepared
+     * signature verification command is invalid.
+     * @throw UnexpectedCommandStatusException If a command returns an
+     * unexpected status.
      * @throw InconsistentDataException If inconsistent data have been detected.
      * @since 0.1.0
      */
