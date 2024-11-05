@@ -1,0 +1,4 @@
+theme: jekyll-theme-minimal
+title: Keypop Calypso Crypto Legacy SAM C++ API
+include:
+  - "_*.html"
