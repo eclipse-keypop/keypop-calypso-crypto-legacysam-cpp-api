@@ -1,0 +1,102 @@
+/**
+* @mainpage Keypop Calypso Crypto Legacy SAM C++ API Documentation
+*
+* @section overview Overview
+*
+* The Keypop Calypso Crypto Legacy SAM C++ API defines interfaces for secure access module (SAM)
+* cryptographic operations required for Calypso card transactions. This C++ interface provides port of the
+* Calypso Networks Association specifications for legacy SAM operations.
+*
+* @section architecture Architecture & Components
+*
+* @subsection sam_management SAM Selection & Management
+*
+* - keypop::calypso::crypto::legacysam::sam::LegacySam
+*   Core interface for Legacy SAM functionality
+*
+* - keypop::calypso::crypto::legacysam::sam::LegacySamSelectionExtension
+*   Interface for SAM selection and unlocking operations
+*
+* @subsection key_management Key Management
+*
+* - keypop::calypso::crypto::legacysam::SystemKeyType
+*   SAM system key types
+*
+* - keypop::calypso::crypto::legacysam::sam::KeyParameter
+*   SAM key parameters management
+*
+* @subsection counter_management Counter Management
+*
+* - keypop::calypso::crypto::legacysam::CounterIncrementAccess
+*   Access rights for counter incrementation
+*
+* @subsection transaction_managers Transaction Management
+*
+* - keypop::calypso::crypto::legacysam::transaction::FreeTransactionManager
+*   Operations performed without control SAM
+*
+* - keypop::calypso::crypto::legacysam::transaction::AsyncTransactionCreatorManager
+*   Prepares operations performed asynchronously
+*
+* - keypop::calypso::crypto::legacysam::transaction::AsyncTransactionExecutorManager
+*   Executes prepared asynchronous operations
+*
+* @subsection security Security Services
+*
+* - keypop::calypso::crypto::legacysam::transaction::SecuritySetting
+*   SAM security configuration management
+*
+* - keypop::calypso::crypto::legacysam::spi::LegacySamRevocationServiceSpi
+*   SAM revocation status checking
+*
+* @subsection signature_operations Signature Operations
+*
+* - keypop::calypso::crypto::legacysam::transaction::BasicSignatureComputationData
+*   Basic signature computation interface
+*
+* - keypop::calypso::crypto::legacysam::transaction::BasicSignatureVerificationData
+*   Basic signature verification interface
+*
+* - keypop::calypso::crypto::legacysam::transaction::TraceableSignatureComputationData
+*   Traceable signature computation interface
+*
+* - keypop::calypso::crypto::legacysam::transaction::TraceableSignatureVerificationData
+*   Traceable signature verification interface
+*
+* @subsection certificate_operations Certificate Operations
+*
+* - keypop::calypso::crypto::legacysam::transaction::KeyPairContainer
+*   Key pair container management
+*
+* - keypop::calypso::crypto::legacysam::transaction::LegacyCardCertificateComputationData
+*   Card certificate computation
+*
+* @subsection data_access Data Access
+*
+* - keypop::calypso::crypto::legacysam::GetDataTag
+*   Data extraction tags
+*
+* @subsection unlock_services Unlock Services
+*
+* - keypop::calypso::crypto::legacysam::spi::LegacySamDynamicUnlockDataProviderSpi
+*   Dynamic unlock service provider
+*
+* - keypop::calypso::crypto::legacysam::spi::LegacySamStaticUnlockDataProviderSpi
+*   Static unlock service provider
+*
+* @section exceptions Exception Handling
+*
+* The API implements the following exception hierarchy:
+*
+* - keypop::calypso::crypto::legacysam::transaction::ReaderIOException
+*   Card/SAM reader communication failure handling
+*
+* - keypop::calypso::crypto::legacysam::transaction::SamIOException
+*   SAM communication failure handling
+*
+* - keypop::calypso::crypto::legacysam::transaction::SamRevokedException
+*   SAM revocation status handling
+*
+* - keypop::calypso::crypto::legacysam::transaction::UnexpectedCommandStatusException
+*   Unexpected SAM command response handling
+*/
