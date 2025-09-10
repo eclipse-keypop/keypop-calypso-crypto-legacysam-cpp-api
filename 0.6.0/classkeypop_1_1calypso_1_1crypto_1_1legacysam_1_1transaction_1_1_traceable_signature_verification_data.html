@@ -114,7 +114,7 @@ Public Member Functions</h2></td></tr>
 <p >An instance of this interface can be obtained via the method <a class="el" href="">org.eclipse.keypop.calypso.crypto.legacysam.LegacySamApiFactory#createTraceableSignatureVerificationData()</a>.</p>
 <dl class="section since"><dt>Since</dt><dd>0.1.0 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_traceable_signature_verification_data_8hpp_source.html#l00036">36</a> of file <a class="el" href="_traceable_signature_verification_data_8hpp_source.html">TraceableSignatureVerificationData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_traceable_signature_verification_data_8hpp_source.html#l00038">38</a> of file <a class="el" href="_traceable_signature_verification_data_8hpp_source.html">TraceableSignatureVerificationData.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6c2d77dfeda40f13f1757c056656ce17" name="a6c2d77dfeda40f13f1757c056656ce17"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6c2d77dfeda40f13f1757c056656ce17">&#9670;&nbsp;</a></span>withoutBusyMode()</h2>
@@ -140,8 +140,8 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 <p >Indicates that the signature has been computed in non "Busy" mode.</p>
 <p >By default, the signature is supposed to have been computed in "Busy" mode.</p>
-<p >The signature may have been generated with "Busy mode" enabled. In this mode, after a "PSO
-Verify Signature" failing because of an incorrect signature, during a few seconds the SAM rejects any "PSO Verify Signature" commands with "Busy" mode by responding with the "busy" status word.</p>
+<p >The signature may have been generated with "Busy mode" enabled. In this mode, after a "PSO Verify Signature" failing because of an incorrect signature, during a few seconds the SAM rejects any "PSO Verify
+Signature" commands with "Busy" mode by responding with the "busy" status word.</p>
 <p >When a "PSO Verify Signature" fails with the busy status, the terminal should repeat the command until the SAM is not busy anymore.</p>
 <p >The busy mode duration is typically of a few seconds, and it is never of greater than ten seconds.</p>
 <p >Note that after a reset of the SAM, "PSO Verify Signature" commands being in "Busy" mode fail with the busy status until the end of the busy mode duration.</p>
@@ -201,7 +201,7 @@ Verify Signature" failing because of an incorrect signature, during a few second
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The current instance. </dd></dl>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_traceable_signature_computation_data.html#a2c998cc7ad43a7f1ed791606af8c352e">TraceableSignatureComputationData::withSamTraceabilityMode(int, SamTraceabilityMode)</a> </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_traceable_signature_computation_data.html#a2c998cc7ad43a7f1ed791606af8c352e">TraceableSignatureComputationData::withSamTraceabilityMode</a>(int, <a class="el" href="namespacekeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction.html#ab0f0764217eb5c15d774db90f57831bf">SamTraceabilityMode</a>) </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">IllegalArgumentException</td><td>If the provided samTraceabilityMode is null. </td></tr>

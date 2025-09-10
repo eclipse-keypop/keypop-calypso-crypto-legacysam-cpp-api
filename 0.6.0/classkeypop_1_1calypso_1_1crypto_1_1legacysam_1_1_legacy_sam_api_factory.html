@@ -87,28 +87,28 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae0fdfc35a70b34cab379d9a778b6af4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1c950aa650444f48c726f10efa48cf2"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_free_transaction_manager.html">FreeTransactionManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html#ae1c950aa650444f48c726f10efa48cf2">createFreeTransactionManager</a> (const std::shared_ptr&lt; CardReader &gt; samReader, const std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1sam_1_1_legacy_sam.html">LegacySam</a> &gt; sam)=0</td></tr>
 <tr class="separator:ae1c950aa650444f48c726f10efa48cf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a831aeb4b7c1ff334b89d92f51bfb28e0"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_async_transaction_creator_manager.html">AsyncTransactionCreatorManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html#a831aeb4b7c1ff334b89d92f51bfb28e0">createAsyncTransactionCreatorManager</a> (const std::string &amp;targetSamContext, const std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_security_setting.html">SecuritySetting</a> &gt; securitySetting)=0</td></tr>
+<tr class="memitem:a831aeb4b7c1ff334b89d92f51bfb28e0"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; AsyncTransactionCreatorManager &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html#a831aeb4b7c1ff334b89d92f51bfb28e0">createAsyncTransactionCreatorManager</a> (const std::string &amp;targetSamContext, const std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_security_setting.html">SecuritySetting</a> &gt; securitySetting)=0</td></tr>
 <tr class="separator:a831aeb4b7c1ff334b89d92f51bfb28e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ddc797e1e7d9e6170b54921a1107093"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_async_transaction_executor_manager.html">AsyncTransactionExecutorManager</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html#a6ddc797e1e7d9e6170b54921a1107093">createAsyncTransactionExecutorManager</a> (const std::shared_ptr&lt; CardReader &gt; samReader, const std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1sam_1_1_legacy_sam.html">LegacySam</a> &gt; sam, const std::string &amp;samCommands)=0</td></tr>
+<tr class="memitem:a6ddc797e1e7d9e6170b54921a1107093"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; AsyncTransactionExecutorManager &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html#a6ddc797e1e7d9e6170b54921a1107093">createAsyncTransactionExecutorManager</a> (const std::shared_ptr&lt; CardReader &gt; samReader, const std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1sam_1_1_legacy_sam.html">LegacySam</a> &gt; sam, const std::string &amp;samCommands)=0</td></tr>
 <tr class="separator:a6ddc797e1e7d9e6170b54921a1107093"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3304039fc1b73b002292f6cee3fe2e8f"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_key_pair_container.html">KeyPairContainer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html#a3304039fc1b73b002292f6cee3fe2e8f">createKeyPairContainer</a> ()=0</td></tr>
 <tr class="separator:a3304039fc1b73b002292f6cee3fe2e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab75c5188ee1b824e5b9874658696a121"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_legacy_card_certificate_computation_data.html">LegacyCardCertificateComputationData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html#ab75c5188ee1b824e5b9874658696a121">createLegacyCardCertificateComputationData</a> ()=0</td></tr>
+<tr class="memitem:ab75c5188ee1b824e5b9874658696a121"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; LegacyCardCertificateComputationData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html#ab75c5188ee1b824e5b9874658696a121">createLegacyCardCertificateComputationData</a> ()=0</td></tr>
 <tr class="separator:ab75c5188ee1b824e5b9874658696a121"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49e971a203ee521f7fa978e3b155a99d"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_basic_signature_computation_data.html">BasicSignatureComputationData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html#a49e971a203ee521f7fa978e3b155a99d">createBasicSignatureComputationData</a> ()=0</td></tr>
+<tr class="memitem:a49e971a203ee521f7fa978e3b155a99d"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; BasicSignatureComputationData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html#a49e971a203ee521f7fa978e3b155a99d">createBasicSignatureComputationData</a> ()=0</td></tr>
 <tr class="separator:a49e971a203ee521f7fa978e3b155a99d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac92e42f3ab3169f493729ce6eb022181"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_traceable_signature_computation_data.html">TraceableSignatureComputationData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html#ac92e42f3ab3169f493729ce6eb022181">createTraceableSignatureComputationData</a> ()=0</td></tr>
+<tr class="memitem:ac92e42f3ab3169f493729ce6eb022181"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; TraceableSignatureComputationData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html#ac92e42f3ab3169f493729ce6eb022181">createTraceableSignatureComputationData</a> ()=0</td></tr>
 <tr class="separator:ac92e42f3ab3169f493729ce6eb022181"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a933777eeb98fe9a4e49f4c0be2476b78"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_basic_signature_verification_data.html">BasicSignatureVerificationData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html#a933777eeb98fe9a4e49f4c0be2476b78">createBasicSignatureVerificationData</a> ()=0</td></tr>
+<tr class="memitem:a933777eeb98fe9a4e49f4c0be2476b78"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; BasicSignatureVerificationData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html#a933777eeb98fe9a4e49f4c0be2476b78">createBasicSignatureVerificationData</a> ()=0</td></tr>
 <tr class="separator:a933777eeb98fe9a4e49f4c0be2476b78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68c49f3a4c436694d88a277048097ddb"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_traceable_signature_verification_data.html">TraceableSignatureVerificationData</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html#a68c49f3a4c436694d88a277048097ddb">createTraceableSignatureVerificationData</a> ()=0</td></tr>
+<tr class="memitem:a68c49f3a4c436694d88a277048097ddb"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; TraceableSignatureVerificationData &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html#a68c49f3a4c436694d88a277048097ddb">createTraceableSignatureVerificationData</a> ()=0</td></tr>
 <tr class="separator:a68c49f3a4c436694d88a277048097ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Legacy SAM API Factory.</p>
 <dl class="section since"><dt>Since</dt><dd>0.3.0 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_legacy_sam_api_factory_8hpp_source.html#l00055">55</a> of file <a class="el" href="_legacy_sam_api_factory_8hpp_source.html">LegacySamApiFactory.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_legacy_sam_api_factory_8hpp_source.html#l00064">64</a> of file <a class="el" href="_legacy_sam_api_factory_8hpp_source.html">LegacySamApiFactory.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a831aeb4b7c1ff334b89d92f51bfb28e0" name="a831aeb4b7c1ff334b89d92f51bfb28e0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a831aeb4b7c1ff334b89d92f51bfb28e0">&#9670;&nbsp;</a></span>createAsyncTransactionCreatorManager()</h2>
@@ -120,7 +120,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_async_transaction_creator_manager.html">AsyncTransactionCreatorManager</a> &gt; keypop::calypso::crypto::legacysam::LegacySamApiFactory::createAsyncTransactionCreatorManager </td>
+          <td class="memname">virtual std::shared_ptr&lt; AsyncTransactionCreatorManager &gt; keypop::calypso::crypto::legacysam::LegacySamApiFactory::createAsyncTransactionCreatorManager </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>targetSamContext</em>, </td>
@@ -173,7 +173,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_async_transaction_executor_manager.html">AsyncTransactionExecutorManager</a> &gt; keypop::calypso::crypto::legacysam::LegacySamApiFactory::createAsyncTransactionExecutorManager </td>
+          <td class="memname">virtual std::shared_ptr&lt; AsyncTransactionExecutorManager &gt; keypop::calypso::crypto::legacysam::LegacySamApiFactory::createAsyncTransactionExecutorManager </td>
           <td>(</td>
           <td class="paramtype">const std::shared_ptr&lt; CardReader &gt;&#160;</td>
           <td class="paramname"><em>samReader</em>, </td>
@@ -233,7 +233,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_basic_signature_computation_data.html">BasicSignatureComputationData</a> &gt; keypop::calypso::crypto::legacysam::LegacySamApiFactory::createBasicSignatureComputationData </td>
+          <td class="memname">virtual std::shared_ptr&lt; BasicSignatureComputationData &gt; keypop::calypso::crypto::legacysam::LegacySamApiFactory::createBasicSignatureComputationData </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -261,7 +261,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_basic_signature_verification_data.html">BasicSignatureVerificationData</a> &gt; keypop::calypso::crypto::legacysam::LegacySamApiFactory::createBasicSignatureVerificationData </td>
+          <td class="memname">virtual std::shared_ptr&lt; BasicSignatureVerificationData &gt; keypop::calypso::crypto::legacysam::LegacySamApiFactory::createBasicSignatureVerificationData </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -369,7 +369,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_legacy_card_certificate_computation_data.html">LegacyCardCertificateComputationData</a> &gt; keypop::calypso::crypto::legacysam::LegacySamApiFactory::createLegacyCardCertificateComputationData </td>
+          <td class="memname">virtual std::shared_ptr&lt; LegacyCardCertificateComputationData &gt; keypop::calypso::crypto::legacysam::LegacySamApiFactory::createLegacyCardCertificateComputationData </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -505,7 +505,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_traceable_signature_computation_data.html">TraceableSignatureComputationData</a> &gt; keypop::calypso::crypto::legacysam::LegacySamApiFactory::createTraceableSignatureComputationData </td>
+          <td class="memname">virtual std::shared_ptr&lt; TraceableSignatureComputationData &gt; keypop::calypso::crypto::legacysam::LegacySamApiFactory::createTraceableSignatureComputationData </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -533,7 +533,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::shared_ptr&lt; <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_traceable_signature_verification_data.html">TraceableSignatureVerificationData</a> &gt; keypop::calypso::crypto::legacysam::LegacySamApiFactory::createTraceableSignatureVerificationData </td>
+          <td class="memname">virtual std::shared_ptr&lt; TraceableSignatureVerificationData &gt; keypop::calypso::crypto::legacysam::LegacySamApiFactory::createTraceableSignatureVerificationData </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
