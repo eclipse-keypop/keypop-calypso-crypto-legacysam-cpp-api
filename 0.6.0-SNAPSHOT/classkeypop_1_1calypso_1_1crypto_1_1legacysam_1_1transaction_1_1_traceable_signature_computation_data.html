@@ -118,7 +118,7 @@ Public Member Functions</h2></td></tr>
 <p >An instance of this interface can be obtained via the method <a class="el" href="classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1_legacy_sam_api_factory.html">keypop::calypso::crypto::legacysam::LegacySamApiFactory</a> ::createTraceableSignatureComputationData().</p>
 <dl class="section since"><dt>Since</dt><dd>0.1.0 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="_traceable_signature_computation_data_8hpp_source.html#l00035">35</a> of file <a class="el" href="_traceable_signature_computation_data_8hpp_source.html">TraceableSignatureComputationData.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_traceable_signature_computation_data_8hpp_source.html#l00037">37</a> of file <a class="el" href="_traceable_signature_computation_data_8hpp_source.html">TraceableSignatureComputationData.hpp</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aa658465d2ceaf4dd2c57f666b5146509" name="aa658465d2ceaf4dd2c57f666b5146509"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa658465d2ceaf4dd2c57f666b5146509">&#9670;&nbsp;</a></span>getSignedData()</h2>
@@ -142,7 +142,8 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p >Returns the data that was used to generate the signature. If the "SAM traceability" mode was enabled, then the signed data are the original data modified with the SAM traceability information.</p>
+<p >Returns the data that was used to generate the signature. If the "SAM
+traceability" mode was enabled, then the signed data are the original data modified with the SAM traceability information.</p>
 <dl class="section return"><dt>Returns</dt><dd>A byte array of the same size as the original data to be signed. </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
