@@ -1,11 +1,12 @@
-/**************************************************************************************************
- * Copyright (c) 2024 Calypso Networks Association https://calypsonet.org/                        *
- *                                                                                                *
- * This program and the accompanying materials are made available under the                       *
- * terms of the MIT License which is available at https://opensource.org/licenses/MIT.            *
- *                                                                                                *
- * SPDX-License-Identifier: MIT                                                                   *
- **************************************************************************************************/
+/******************************************************************************
+ * Copyright (c) 2025 Calypso Networks Association https://calypsonet.org/    *
+ *                                                                            *
+ * This program and the accompanying materials are made available under the   *
+ * terms of the MIT License which is available at                             *
+ * https://opensource.org/licenses/MIT.                                       *
+ *                                                                            *
+ * SPDX-License-Identifier: MIT                                               *
+ ******************************************************************************/
 
 #pragma once
 
@@ -32,19 +33,27 @@ namespace calypso {
 namespace crypto {
 namespace legacysam {
 
-using keypop::calypso::card::transaction::spi::SymmetricCryptoCardTransactionManagerFactory;
+using keypop::calypso::card::transaction::spi::
+    SymmetricCryptoCardTransactionManagerFactory;
 using keypop::calypso::crypto::legacysam::sam::LegacySam;
 using keypop::calypso::crypto::legacysam::sam::LegacySamSelectionExtension;
-using keypop::calypso::crypto::legacysam::transaction::AsyncTransactionCreatorManager;
-using keypop::calypso::crypto::legacysam::transaction::AsyncTransactionExecutorManager;
-using keypop::calypso::crypto::legacysam::transaction::BasicSignatureComputationData;
-using keypop::calypso::crypto::legacysam::transaction::BasicSignatureVerificationData;
+using keypop::calypso::crypto::legacysam::transaction::
+    AsyncTransactionCreatorManager;
+using keypop::calypso::crypto::legacysam::transaction::
+    AsyncTransactionExecutorManager;
+using keypop::calypso::crypto::legacysam::transaction::
+    BasicSignatureComputationData;
+using keypop::calypso::crypto::legacysam::transaction::
+    BasicSignatureVerificationData;
 using keypop::calypso::crypto::legacysam::transaction::FreeTransactionManager;
 using keypop::calypso::crypto::legacysam::transaction::KeyPairContainer;
-using keypop::calypso::crypto::legacysam::transaction::LegacyCardCertificateComputationData;
+using keypop::calypso::crypto::legacysam::transaction::
+    LegacyCardCertificateComputationData;
 using keypop::calypso::crypto::legacysam::transaction::SecuritySetting;
-using keypop::calypso::crypto::legacysam::transaction::TraceableSignatureComputationData;
-using keypop::calypso::crypto::legacysam::transaction::TraceableSignatureVerificationData;
+using keypop::calypso::crypto::legacysam::transaction::
+    TraceableSignatureComputationData;
+using keypop::calypso::crypto::legacysam::transaction::
+    TraceableSignatureVerificationData;
 using keypop::reader::CardReader;
 
 /**
@@ -60,22 +69,25 @@ public:
      * @return A new instance of LegacySamSelectionExtension.
      * @since 0.3.0
      */
-    virtual std::shared_ptr<LegacySamSelectionExtension> createLegacySamSelectionExtension() = 0;
+    virtual std::shared_ptr<LegacySamSelectionExtension>
+    createLegacySamSelectionExtension() = 0;
 
     /**
-     * Returns a new instance of SymmetricCryptoCardTransactionManagerFactory to be used to
-     * secure a card transaction.
+     * Returns a new instance of SymmetricCryptoCardTransactionManagerFactory to
+     * be used to secure a card transaction.
      *
      * @param samReader The reader to use to communicate with the SAM.
-     * @param sam The associated control SAM to be used with the card transaction.
-     * @return A new instance of SymmetricCryptoCardTransactionManagerFactory to be used to
-     *         secure a card transaction.
+     * @param sam The associated control SAM to be used with the card
+     * transaction.
+     * @return A new instance of SymmetricCryptoCardTransactionManagerFactory to
+     * be used to secure a card transaction.
      * @throw IllegalArgumentException If an argument is null or invalid.
      * @since 0.3.0
      */
     virtual std::shared_ptr<SymmetricCryptoCardTransactionManagerFactory>
     createSymmetricCryptoCardTransactionManagerFactory(
-        const std::shared_ptr<CardReader> samReader, const std::shared_ptr<LegacySam> sam)
+        const std::shared_ptr<CardReader> samReader,
+        const std::shared_ptr<LegacySam> sam)
         = 0;
 
     /**
@@ -95,8 +107,10 @@ public:
      * @throw IllegalArgumentException If an argument is null or invalid.
      * @since 0.3.0
      */
-    virtual std::shared_ptr<FreeTransactionManager> createFreeTransactionManager(
-        const std::shared_ptr<CardReader> samReader, const std::shared_ptr<LegacySam> sam)
+    virtual std::shared_ptr<FreeTransactionManager>
+    createFreeTransactionManager(
+        const std::shared_ptr<CardReader> samReader,
+        const std::shared_ptr<LegacySam> sam)
         = 0;
 
     /**
@@ -111,8 +125,10 @@ public:
      * @throw IllegalArgumentException If an argument is null or invalid.
      * @since 0.3.0
      */
-    virtual std::shared_ptr<AsyncTransactionCreatorManager> createAsyncTransactionCreatorManager(
-        const std::string& targetSamContext, const std::shared_ptr<SecuritySetting> securitySetting)
+    virtual std::shared_ptr<AsyncTransactionCreatorManager>
+    createAsyncTransactionCreatorManager(
+        const std::string& targetSamContext,
+        const std::shared_ptr<SecuritySetting> securitySetting)
         = 0;
 
     /**
@@ -127,7 +143,8 @@ public:
      * @throws IllegalArgumentException If an argument is null or invalid.
      * @since 0.3.0
      */
-    virtual std::shared_ptr<AsyncTransactionExecutorManager> createAsyncTransactionExecutorManager(
+    virtual std::shared_ptr<AsyncTransactionExecutorManager>
+    createAsyncTransactionExecutorManager(
         const std::shared_ptr<CardReader> samReader,
         const std::shared_ptr<LegacySam> sam,
         const std::string& samCommands)
@@ -156,8 +173,8 @@ public:
      * @return A new instance of BasicSignatureComputationData.
      * @since 0.3.0
      */
-    virtual std::shared_ptr<BasicSignatureComputationData> createBasicSignatureComputationData()
-        = 0;
+    virtual std::shared_ptr<BasicSignatureComputationData>
+    createBasicSignatureComputationData() = 0;
 
     /**
      * Returns a new instance of TraceableSignatureComputationData.
@@ -174,8 +191,8 @@ public:
      * @return A new instance of BasicSignatureVerificationData.
      * @since 0.3.0
      */
-    virtual std::shared_ptr<BasicSignatureVerificationData> createBasicSignatureVerificationData()
-        = 0;
+    virtual std::shared_ptr<BasicSignatureVerificationData>
+    createBasicSignatureVerificationData() = 0;
 
     /**
      * Returns a new instance of TraceableSignatureVerificationData.

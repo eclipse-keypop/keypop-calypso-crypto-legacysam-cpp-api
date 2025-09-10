@@ -1,11 +1,12 @@
-/**************************************************************************************************
- * Copyright (c) 2024 Calypso Networks Association https://calypsonet.org/                        *
- *                                                                                                *
- * This program and the accompanying materials are made available under the                       *
- * terms of the MIT License which is available at https://opensource.org/licenses/MIT.            *
- *                                                                                                *
- * SPDX-License-Identifier: MIT                                                                   *
- **************************************************************************************************/
+/******************************************************************************
+ * Copyright (c) 2025 Calypso Networks Association https://calypsonet.org/    *
+ *                                                                            *
+ * This program and the accompanying materials are made available under the   *
+ * terms of the MIT License which is available at                             *
+ * https://opensource.org/licenses/MIT.                                       *
+ *                                                                            *
+ * SPDX-License-Identifier: MIT                                               *
+ ******************************************************************************/
 
 #pragma once
 
@@ -20,8 +21,8 @@ namespace transaction {
 
 /**
  * Contains the input/output data of the {@link
- * FreeTransactionManager#prepareComputeSignature(SignatureComputationData)} method for common
- * signature computation modes.
+ * FreeTransactionManager#prepareComputeSignature(SignatureComputationData)}
+ * method for common signature computation modes.
  *
  * @param <T> The type of the lowest level child object.
  * @since 0.1.0
@@ -39,11 +40,13 @@ public:
      * @return The current instance.
      * @since 0.1.0
      */
-    virtual T& setData(const std::vector<uint8_t>& data, const uint8_t kif, const uint8_t kvc) = 0;
+    virtual T& setData(
+        const std::vector<uint8_t>& data, const uint8_t kif, const uint8_t kvc)
+        = 0;
 
     /**
-     * Sets the expected size of the signature in bytes, which can be between 1 and 8 bytes
-     * (optional).
+     * Sets the expected size of the signature in bytes, which can be between 1
+     * and 8 bytes (optional).
      *
      * <p>By default, the signature will be generated on 8 bytes.
      *
@@ -58,8 +61,9 @@ public:
     /**
      * Sets a specific key diversifier to use before signing (optional).
      *
-     * <p>By default, the key diversification is performed with the full serial number of the target
-     * card or SAM depending on the transaction context (Card or SAM transaction).
+     * <p>By default, the key diversification is performed with the full serial
+     * number of the target card or SAM depending on the transaction context
+     * (Card or SAM transaction).
      *
      * @param diversifier The diversifier to be used (from 1 to 8 bytes long).
      * @return The current instance.
