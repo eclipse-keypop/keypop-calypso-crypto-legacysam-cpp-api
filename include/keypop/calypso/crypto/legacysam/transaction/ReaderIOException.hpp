@@ -43,9 +43,8 @@ public:
      * @since 0.1.0
      */
     ReaderIOException(
-        const std::string& message, const std::shared_ptr<std::exception> cause)
+        const std::string& message, const std::exception& /*cause*/)
     : std::runtime_error(message) {
-        (void)cause;
     }
 };
 

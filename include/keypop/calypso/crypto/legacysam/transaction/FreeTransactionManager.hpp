@@ -10,10 +10,17 @@
 
 #pragma once
 
+#include <cstdint>
+#include <memory>
 #include <string>
+#include <vector>
 
 #include "keypop/calypso/crypto/legacysam/GetDataTag.hpp"
+#include "keypop/calypso/crypto/legacysam/transaction/KeyPairContainer.hpp"
+#include "keypop/calypso/crypto/legacysam/transaction/LegacyCardCertificateComputationData.hpp"
 #include "keypop/calypso/crypto/legacysam/transaction/ReadTransactionManager.hpp"
+#include "keypop/calypso/crypto/legacysam/transaction/SignatureComputationDataBase.hpp"
+#include "keypop/calypso/crypto/legacysam/transaction/SignatureVerificationDataBase.hpp"
 
 namespace keypop {
 namespace calypso {
@@ -25,8 +32,8 @@ namespace transaction {
  * Transaction manager dedicated to operations performed without control SAM.
  *
  * <p>An instance of this interface can be obtained via the method {@link
- * keypop::calypso::crypto::legacysam::LegacySamApiFactory::createFreeTransactionManager(
- *     const std::shared_ptr<CardReader>, LegacySam).
+ * keypop::calypso::crypto::legacysam::LegacySamApiFactory
+ * ::createFreeTransactionManager(const std::shared_ptr<CardReader>, LegacySam).
  *
  * @since 0.1.0
  */
@@ -44,7 +51,7 @@ public:
      * @throw IllegalArgumentException If tag is null.
      * @since 0.5.0
      */
-    virtual FreeTransactionManager& prepareGetData(const GetDataTag tag) = 0;
+    virtual FreeTransactionManager& prepareGetData(GetDataTag tag) = 0;
 
     /**
      * Schedules the execution of "Card Generate Asymmetric Key Pair" command.
@@ -59,8 +66,8 @@ public:
      * @see LegacySamApiFactory#createKeyPairContainer()
      * @since 0.5.0
      */
-    virtual FreeTransactionManager&
-    prepareGenerateCardAsymmetricKeyPair(KeyPairContainer keyPairContainer)
+    virtual FreeTransactionManager& prepareGenerateCardAsymmetricKeyPair(
+        const std::shared_ptr<KeyPairContainer> keyPairContainer)
         = 0;
 
     /**
@@ -77,8 +84,27 @@ public:
      * @see LegacySamApiFactory#createLegacyCardCertificateComputationData()
      * @since 0.5.0
      */
-    virtual FreeTransactionManager&
-    prepareComputeCardCertificate(LegacyCardCertificateComputationData data)
+    virtual FreeTransactionManager& prepareComputeCardCertificate(
+        const std::shared_ptr<LegacyCardCertificateComputationData> data)
+        = 0;
+
+    /**
+     * Schedules the execution of a "Write Key" command to set the lock file of
+     * the SAM.
+     *
+     * <p>The lock value will be transferred in plain text.
+     *
+     * @param lockIndex The index of the lock file.
+     * @param lockParameters The lock permissions parameters.
+     * @param lockValue A 16-byte byte array representing the lock's value.
+     * @throws IllegalArgumentException If lockValue is null or out of range.
+     * @return The current instance.
+     * @since 0.7.0
+     */
+    virtual FreeTransactionManager& preparePlainWriteLock(
+        const uint8_t lockIndex,
+        const uint8_t lockParameters,
+        const std::vector<uint8_t>& lockValue)
         = 0;
 
     /**
@@ -107,7 +133,7 @@ public:
      * </ul>
      *
      * @param data The input/output data containing the parameters of the
-     *        command.
+     * command.
      * @return The current instance.
      * @throw IllegalArgumentException If the input data is inconsistent.
      * @see SignatureComputationData
@@ -116,8 +142,9 @@ public:
      * @see LegacySamApiFactory#createBasicSignatureComputationData()
      * @since 0.1.0
      */
-    virtual FreeTransactionManager&
-    prepareComputeSignature(SignatureComputationData<?> data) = 0;
+    virtual FreeTransactionManager& prepareComputeSignature(
+        const std::shared_ptr<SignatureComputationDataBase> data)
+        = 0;
 
     /**
      * Schedules the execution of a "Data Cipher" or "PSO Verify Signature"
@@ -128,20 +155,21 @@ public:
      * TraceableSignatureVerificationData objects.
      *
      * @param data The input/output data containing the parameters of the
-     *        command.
+     * command.
      * @return The current instance.
-     * @throws IllegalArgumentException If the input data is inconsistent.
-     * @throws SamRevokedException If the signature has been computed in "SAM
-     *         traceability" mode and the SAM revocation status check has been
-     *         requested and the SAM is revoked (for traceable signature only).
+     * @throw IllegalArgumentException If the input data is inconsistent.
+     * @throw SamRevokedException If the signature has been computed in "SAM
+     * traceability" mode and the SAM revocation status check has been
+     * requested and the SAM is revoked (for traceable signature only).
      * @see SignatureVerificationData
      * @see BasicSignatureVerificationData
      * @see TraceableSignatureVerificationData
      * @see LegacySamApiFactory#createBasicSignatureVerificationData()
      * @since 0.1.0
      */
-    virtual FreeTransactionManager&
-    prepareVerifySignature(SignatureVerificationData<?> data) = 0
+    virtual FreeTransactionManager& prepareVerifySignature(
+        const std::shared_ptr<SignatureVerificationDataBase> data)
+        = 0;
 
     /**
      * Executes the required commands to obtain the security context, which will
@@ -155,8 +183,7 @@ public:
      * @return A not empty string containing the context.
      * @since 0.2.0
      */
-    virtual const std::string
-    exportTargetSamContextForAsyncTransaction() = 0;
+    virtual std::string exportTargetSamContextForAsyncTransaction() = 0;
 };
 
 } /* namespace transaction */

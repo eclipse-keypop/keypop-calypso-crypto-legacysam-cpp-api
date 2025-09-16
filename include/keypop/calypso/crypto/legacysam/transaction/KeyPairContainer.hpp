@@ -37,7 +37,7 @@ public:
      * @return The key pair as a 96-byte byte array.
      * @since 0.5.0
      */
-    virtual const std::vector<uint8_t> getKeyPair() = 0;
+    virtual const std::vector<uint8_t>& getKeyPair() const = 0;
 };
 
 } /* namespace transaction */

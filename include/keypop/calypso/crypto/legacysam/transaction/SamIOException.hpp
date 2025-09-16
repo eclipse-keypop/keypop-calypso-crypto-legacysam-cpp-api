@@ -43,10 +43,8 @@ public:
      * @param cause The cause.
      * @since 0.1.0
      */
-    SamIOException(
-        const std::string& message, const std::shared_ptr<std::exception> cause)
+    SamIOException(const std::string& message, const std::exception& /*cause*/)
     : std::runtime_error(message) {
-        (void)cause;
     }
 };
 

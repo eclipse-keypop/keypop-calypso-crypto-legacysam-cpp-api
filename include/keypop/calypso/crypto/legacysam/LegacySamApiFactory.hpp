@@ -23,6 +23,7 @@
 #include "keypop/calypso/crypto/legacysam/transaction/FreeTransactionManager.hpp"
 #include "keypop/calypso/crypto/legacysam/transaction/KeyPairContainer.hpp"
 #include "keypop/calypso/crypto/legacysam/transaction/LegacyCardCertificateComputationData.hpp"
+#include "keypop/calypso/crypto/legacysam/transaction/SecureWriteTransactionManager.hpp"
 #include "keypop/calypso/crypto/legacysam/transaction/SecuritySetting.hpp"
 #include "keypop/calypso/crypto/legacysam/transaction/TraceableSignatureComputationData.hpp"
 #include "keypop/calypso/crypto/legacysam/transaction/TraceableSignatureVerificationData.hpp"
@@ -49,6 +50,8 @@ using keypop::calypso::crypto::legacysam::transaction::FreeTransactionManager;
 using keypop::calypso::crypto::legacysam::transaction::KeyPairContainer;
 using keypop::calypso::crypto::legacysam::transaction::
     LegacyCardCertificateComputationData;
+using keypop::calypso::crypto::legacysam::transaction::
+    SecureWriteTransactionManager;
 using keypop::calypso::crypto::legacysam::transaction::SecuritySetting;
 using keypop::calypso::crypto::legacysam::transaction::
     TraceableSignatureComputationData;
@@ -111,6 +114,23 @@ public:
     createFreeTransactionManager(
         const std::shared_ptr<CardReader> samReader,
         const std::shared_ptr<LegacySam> sam)
+        = 0;
+
+    /**
+     * Returns a new instance of {@link SecureWriteTransactionManager}.
+     *
+     * @param samReader The reader to use to communicate with the SAM.
+     * @param sam The SAM image.
+     * @param securitySetting The security settings.
+     * @return A new instance of {@link SecureWriteTransactionManager}.
+     * @throws IllegalArgumentException If an argument is null or invalid.
+     * @since 0.7.0
+     */
+    virtual std::shared_ptr<SecureWriteTransactionManager>
+    createSecureWriteTransactionManager(
+        const std::shared_ptr<CardReader> samReader,
+        const std::shared_ptr<LegacySam> sam,
+        const std::shared_ptr<SecuritySetting> securitySetting)
         = 0;
 
     /**

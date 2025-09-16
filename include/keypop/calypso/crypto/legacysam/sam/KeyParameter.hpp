@@ -28,7 +28,7 @@ namespace sam {
 class KeyParameter {
 public:
     /**
-     * Gets the raw data of the key's parameters.
+     * Retrieves the raw data of the key's parameters.
      *
      * @return a byte array of 13 bytes representing the key's parameters,
      * including KIF, KVC, algorithm, and PAR1 to PAR10.

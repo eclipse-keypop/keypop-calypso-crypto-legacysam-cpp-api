@@ -13,6 +13,8 @@
 #include <cstdint>
 #include <vector>
 
+#include "keypop/calypso/crypto/legacysam/transaction/SignatureComputationDataBase.hpp"
+
 namespace keypop {
 namespace calypso {
 namespace crypto {
@@ -20,19 +22,19 @@ namespace legacysam {
 namespace transaction {
 
 /**
- * Contains the input/output data of the {@link
- * FreeTransactionManager#prepareComputeSignature(SignatureComputationData)}
+ * Contains the input/output data of the
+ * FreeTransactionManager::prepareComputeSignature(SignatureComputationData)
  * method for common signature computation modes.
  *
  * @param <T> The type of the lowest level child object.
  * @since 0.1.0
  */
 template <typename T>
-class SignatureComputationData {
+class SignatureComputationData : virtual public SignatureComputationDataBase {
 public:
     /**
-     * Sets the data to be signed and the KIF/KVC of the key to be used for the signature
-     * computation.
+     * Sets the data to be signed and the KIF/KVC of the key to be used for the
+     * signature computation.
      *
      * @param data The data to be signed.
      * @param kif The KIF of the key to be used for the signature computation.
@@ -40,8 +42,8 @@ public:
      * @return The current instance.
      * @since 0.1.0
      */
-    virtual T& setData(
-        const std::vector<uint8_t>& data, const uint8_t kif, const uint8_t kvc)
+    virtual T&
+    setData(const std::vector<uint8_t>& data, uint8_t kif, uint8_t kvc)
         = 0;
 
     /**
@@ -70,15 +72,6 @@ public:
      * @since 0.1.0
      */
     virtual T& setKeyDiversifier(const std::vector<uint8_t>& diversifier) = 0;
-
-    /**
-     * Returns the computed signature.
-     *
-     * @return A byte array of 1 to 8 bytes.
-     * @throws IllegalStateException If the command has not yet been processed.
-     * @since 0.1.0
-     */
-    const std::vector<uint8_t>& getSignature() const = 0;
 };
 
 } /* namespace transaction */

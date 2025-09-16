@@ -23,6 +23,8 @@ namespace legacysam {
  * @since 0.2.0
  */
 enum class SystemKeyType {
+    UNKNOWN = 0,
+
     /**
      * Personalization key, to decipher and authorize the writing of parameters
      * and system keys.
@@ -52,6 +54,22 @@ enum class SystemKeyType {
      */
     AUTHENTICATION,
 };
+
+inline const char*
+name(SystemKeyType systemKeyType) {
+    switch (systemKeyType) {
+    case SystemKeyType::PERSONALIZATION:
+        return "PERSONALIZATION";
+    case SystemKeyType::KEY_MANAGEMENT:
+        return "KEY_MANAGEMENT";
+    case SystemKeyType::RELOADING:
+        return "RELOADING";
+    case SystemKeyType::AUTHENTICATION:
+        return "AUTHENTICATION";
+    default:
+        return "UNKNOWN";
+    }
+}
 
 } /* namespace legacysam */
 } /* namespace crypto */
