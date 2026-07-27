@@ -17,7 +17,7 @@ FetchContent_Declare(
         KeypopCalypsoCryptoLegacySamCppApi
         DOWNLOAD_EXTRACT_TIMESTAMP true
         GIT_REPOSITORY https://github.com/eclipse-keypop/keypop-calypso-crypto-symmetric-cpp-api
-        GIT_TAG develop-0.1.1
+        GIT_TAG 0.1.1
 )
 
 FetchContent_MakeAvailable(KeypopCalypsoCryptoLegacySamCppApi)
