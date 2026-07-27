@@ -13,36 +13,34 @@
 #include <cstdint>
 #include <vector>
 
-#include "keypop/calypso/crypto/legacysam/transaction/SignatureVerificationData.hpp"
-
 namespace keypop {
 namespace calypso {
 namespace crypto {
 namespace legacysam {
-namespace transaction {
+namespace sam {
 
 /**
- * Contains the input/output data of the
- * FreeTransactionManager::prepareVerifySignature(
- *     const std::shared_ptr<BasicSignatureVerificationData>)
- * method for basic signature computation using the "Data Cipher" command.
+ * POJO containing the parameters of the SAM.
  *
- * <p>An instance of this interface can be obtained via the method
- * keypop::calypso::crypto::legacysam::LegacySamApiFactory
- *     ::createBasicSignatureVerificationData().
- *
- * @since 0.1.0
+ * @since 0.7.0
  */
-class BasicSignatureVerificationData
-: public virtual SignatureVerificationData<BasicSignatureVerificationData> {
+class SamParameters {
 public:
     /**
      * Virtual destructor.
      */
-    virtual ~BasicSignatureVerificationData() = default;
+    virtual ~SamParameters() = default;
+
+    /**
+     * Retrieves the raw data of the SAM's parameters.
+     *
+     * @return a byte array of 29 bytes representing the SAM's parameters.
+     * @since 0.7.0
+     */
+    virtual const std::vector<uint8_t> getRawData() const = 0;
 };
 
-} /* namespace transaction */
+} /* namespace sam */
 } /* namespace legacysam */
 } /* namespace crypto */
 } /* namespace calypso */

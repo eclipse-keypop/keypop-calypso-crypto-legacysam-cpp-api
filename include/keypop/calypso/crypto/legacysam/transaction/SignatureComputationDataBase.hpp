@@ -11,10 +11,7 @@
 #pragma once
 
 #include <cstdint>
-#include <string>
 #include <vector>
-
-#include "keypop/calypso/crypto/legacysam/transaction/WriteTransactionManager.hpp"
 
 namespace keypop {
 namespace calypso {
@@ -23,33 +20,18 @@ namespace legacysam {
 namespace transaction {
 
 /**
- * Transaction manager dedicated to operations performed asynchronously. This
- * manager prepares commands using a control SAM, and the result is available as
- * a string to be imported and processed by a {@link
- * AsyncTransactionExecutorManager}.
- *
- * <p>An instance of this interface can be obtained via the method
- * keypop::calypso::crypto::legacysam::LegacySamApiFactory
- *     ::createAsyncTransactionCreatorManager(const std::string&,
- * SecuritySetting).
- *
- * @see AsyncTransactionExecutorManager
- * @since 0.2.0
+ * C++ Non-templated base extraction class.
  */
-class AsyncTransactionCreatorManager
-: public WriteTransactionManager<AsyncTransactionCreatorManager> {
+class SignatureComputationDataBase {
 public:
     /**
-     * Returns a string containing the prepared commands to be executed by a
-     * target SAM.
+     * Returns the computed signature.
      *
-     * <p>These commands can later be imported and processed by a {@link
-     * AsyncTransactionExecutorManager}.
-     *
-     * @return A not empty string.
-     * @since 0.2.0
+     * @return A byte array of 1 to 8 bytes.
+     * @throws IllegalStateException If the command has not yet been processed.
+     * @since 0.1.0
      */
-    virtual std::string exportCommands() const = 0;
+    virtual const std::vector<uint8_t>& getSignature() const = 0;
 };
 
 } /* namespace transaction */

@@ -19,6 +19,7 @@
 #include "keypop/calypso/crypto/legacysam/CounterIncrementAccess.hpp"
 #include "keypop/calypso/crypto/legacysam/SystemKeyType.hpp"
 #include "keypop/calypso/crypto/legacysam/sam/KeyParameter.hpp"
+#include "keypop/calypso/crypto/legacysam/sam/SamParameters.hpp"
 #include "keypop/reader/selection/spi/SmartCard.hpp"
 
 namespace keypop {
@@ -82,7 +83,14 @@ public:
          *
          * @since 0.1.0
          */
-        UNKNOWN
+        UNKNOWN,
+
+        /**
+         * No product type (= null)
+         *
+         * @since 0.1.0
+         */
+        NONE
     };
 
     /**
@@ -99,7 +107,7 @@ public:
      * @return A non-null string.
      * @since 0.1.0
      */
-    virtual const std::string& getProductInfo() const = 0;
+    virtual std::string getProductInfo() const = 0;
 
     /**
      * Returns the SAM serial number as a byte array.
@@ -162,6 +170,8 @@ public:
      *
      * @param counterNumber The number of the counter (in range [0..26]).
      * @return Null if the counter value is not set.
+     * @see LegacySamSelectionExtension#prepareReadCounterStatus(int)
+     * @see FreeTransactionManager#prepareReadCounterStatus(int)
      * @since 0.1.0
      */
     virtual std::shared_ptr<int> getCounter(const int counterNumber) const = 0;
@@ -172,15 +182,19 @@ public:
      * {@code value} is the counter value.
      *
      * @return A non-null map.
+     * @see LegacySamSelectionExtension#prepareReadAllCountersStatus()
+     * @see FreeTransactionManager#prepareReadAllCountersStatus()
      * @since 0.1.0
      */
-    virtual const std::map<const int, const int>& getCounters() const = 0;
+    virtual const std::map<const int, int>& getCounters() const = 0;
 
     /**
      * Returns the counter increment access mode.
      *
      * @param counterNumber The number of the counter being checked.
      * @return Null if the counter increment access is unknown.
+     * @see LegacySamSelectionExtension#prepareReadCounterStatus(int)
+     * @see FreeTransactionManager#prepareReadCounterStatus(int)
      * @since 0.2.0
      */
     virtual CounterIncrementAccess
@@ -192,6 +206,8 @@ public:
      * @param counterNumber The number of the counter ceiling (in range
      * [0..26]).
      * @return Null if the counter ceiling value is not set.
+     * @see LegacySamSelectionExtension#prepareReadCounterStatus(int)
+     * @see FreeTransactionManager#prepareReadCounterStatus(int)
      * @since 0.1.0
      */
     virtual std::shared_ptr<int>
@@ -202,30 +218,79 @@ public:
      * key} is the ceiling number and {@code value} is the ceiling value.
      *
      * @return A non-null map.
+     * @see LegacySamSelectionExtension#prepareReadAllCountersStatus()
+     * @see FreeTransactionManager#prepareReadAllCountersStatus()
      * @since 0.1.0
      */
-    virtual const std::map<const int, const int>&
-    getCounterCeilings() const = 0;
+    virtual const std::map<const int, int>& getCounterCeilings() const = 0;
 
     /**
-     * Returns the parameters of the system key whose type is provided.
-     *
-     * @param systemKeyType The type of system key.
-     * @return Null if there is no parameter available for the specified key
-     * type.
-     * @since 0.2.0
-     */
-    virtual KeyParameter
-    getSystemKeyParameter(const SystemKeyType systemKeyType) const = 0;
-
-    /**
-     * Gets the CA certificate retrieved from the SAM as a 384-byte byte array.
+     * Returns the CA certificate retrieved from the SAM as a 384-byte byte
+     * array.
      *
      * @return null if the CA certificate is not available.
+     * @see LegacySamSelectionExtension#prepareGetData(GetDataTag)
      * @see FreeTransactionManager#prepareGetData(GetDataTag)
      * @since 0.5.0
      */
     virtual const std::vector<uint8_t>& getCaCertificate() const = 0;
+
+    /**
+     * Returns the SAM parameters retrieved from the SAM.
+     *
+     * @return null if the SAM parameters are not available.
+     * @see LegacySamSelectionExtension#prepareReadSamParameters()
+     * @see FreeTransactionManager#prepareReadSamParameters()
+     * @since 0.7.0
+     */
+    virtual std::shared_ptr<SamParameters> getSamParameters() const = 0;
+
+    /**
+     * Returns the parameters of the system key for the specified key type.
+     *
+     * @param systemKeyType The type of system key.
+     * @return Null if there is no parameter available for the specified key
+     * type.
+     *
+     * @throw IllegalArgumentException If the provided argument is null.
+     * @see
+     * LegacySamSelectionExtension#prepareReadSystemKeyParameters(SystemKeyType)
+     * @see FreeTransactionManager#prepareReadSystemKeyParameters(SystemKeyType)
+     * @since 0.2.0
+     */
+    virtual std::shared_ptr<KeyParameter>
+    getSystemKeyParameter(const SystemKeyType systemKeyType) const = 0;
+
+    /**
+     * Returns the parameters of the work key referenced by its record number.
+     *
+     * @param recordNumber The key record number (in range [1..126]).
+     * @return Null if there is no parameter available for the specified key
+     * record number.
+     * @throw IllegalArgumentException If the provided record number is out of
+     * range.
+     * @see LegacySamSelectionExtension#prepareReadWorkKeyParameters(const int)
+     * @see FreeTransactionManager#prepareReadWorkKeyParameters(const int)
+     * @since 0.7.0
+     */
+    virtual std::shared_ptr<KeyParameter>
+    getWorkKeyParameter(const int recordNumber) const = 0;
+
+    /**
+     * Returns the parameters of the work key referenced by its KIF and KVC.
+     *
+     * @param kif The key KIF.
+     * @param kvc The key KVC.
+     * @return Null if there is no parameter available for the specified
+     * KIF/KVC.
+     * @see LegacySamSelectionExtension#prepareReadWorkKeyParameters(uint8_t,
+     * uint8_t)
+     * @see FreeTransactionManager#prepareReadWorkKeyParameters(uint8_t,
+     * uint8_t)
+     * @since 0.7.0
+     */
+    virtual std::shared_ptr<KeyParameter>
+    getWorkKeyParameter(const uint8_t kif, const uint8_t kvc) const = 0;
 };
 
 } /* namespace sam */

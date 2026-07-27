@@ -28,12 +28,14 @@ namespace transaction {
  * computation using the "Data Cipher" command.
  *
  * <p>An instance of this interface can be obtained via the method
- * keypop::calypso::crypto::legacysam::LegacySamApiFactory::createBasicSignatureComputationData().
+ * keypop::calypso::crypto::legacysam::LegacySamApiFactory
+ * ::createBasicSignatureComputationData().
  *
  * @since 0.1.0
  */
 class BasicSignatureComputationData
-: public SignatureComputationData<BasicSignatureComputationData> {
+: public virtual SignatureComputationData<BasicSignatureComputationData> {
+public:
     /**
      * Virtual destructor.
      */

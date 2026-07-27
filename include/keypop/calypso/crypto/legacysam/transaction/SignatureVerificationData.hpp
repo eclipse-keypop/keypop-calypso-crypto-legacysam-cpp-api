@@ -13,6 +13,7 @@
 #include <cstdint>
 #include <vector>
 
+#include "keypop/calypso/crypto/legacysam/transaction/SignatureVerificationDataBase.hpp"
 namespace keypop {
 namespace calypso {
 namespace crypto {
@@ -28,11 +29,11 @@ namespace transaction {
  * @since 0.1.0
  */
 template <typename T>
-class SignatureVerificationData {
+class SignatureVerificationData : virtual public SignatureVerificationDataBase {
 public:
     /**
-     * Sets the signed data, the associated signature and the KIF/KVC of the key to be used for the
-     * signature verification.
+     * Sets the signed data, the associated signature and the KIF/KVC of the key
+     * to be used for the signature verification.
      *
      * @param data The signed data.
      * @param signature The associated signature.
@@ -44,8 +45,8 @@ public:
     virtual T& setData(
         const std::vector<uint8_t>& data,
         const std::vector<uint8_t>& signature,
-        const uint8_t kif,
-        const uint8_t kvc)
+        uint8_t kif,
+        uint8_t kvc)
         = 0;
 
     /**
@@ -61,16 +62,6 @@ public:
      * @since 0.1.0
      */
     virtual T& setKeyDiversifier(const std::vector<uint8_t>& diversifier) = 0;
-
-    /**
-     * Returns the result of the signature verification process by indicating if
-     * the signature is valid or not.
-     *
-     * @return True if the signature is valid.
-     * @throw IllegalStateException If the command has not yet been processed.
-     * @since 0.1.0
-     */
-    virtual bool isSignatureValid() const = 0;
 };
 
 } /* namespace transaction */

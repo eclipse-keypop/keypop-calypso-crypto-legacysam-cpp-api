@@ -35,7 +35,7 @@ namespace transaction {
  * @since 0.1.0
  */
 class TraceableSignatureComputationData
-: public SignatureComputationData<TraceableSignatureComputationData> {
+: public virtual SignatureComputationData<TraceableSignatureComputationData> {
 public:
     /**
      * Enables the "SAM traceability" mode to securely record in the data to

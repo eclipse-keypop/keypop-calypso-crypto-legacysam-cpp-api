@@ -14,6 +14,8 @@
 #include <vector>
 
 #include "keypop/calypso/card/transaction/spi/CardTransactionCryptoExtension.hpp"
+#include "keypop/calypso/crypto/legacysam/transaction/SignatureComputationDataBase.hpp"
+#include "keypop/calypso/crypto/legacysam/transaction/SignatureVerificationDataBase.hpp"
 
 namespace keypop {
 namespace calypso {
@@ -77,7 +79,8 @@ public:
      * @since 0.3.0
      */
     virtual CardTransactionLegacySamExtension&
-    prepareComputeSignature(SignatureComputationData<?> data) = 0;
+    prepareComputeSignature(std::shared_ptr<SignatureComputationDataBase> data)
+        = 0;
 
     /**
      * Schedules the execution of a "Data Cipher" or "PSO Verify Signature"
@@ -100,7 +103,8 @@ public:
      * @since 0.3.0
      */
     virtual CardTransactionLegacySamExtension&
-    prepareVerifySignature(SignatureVerificationData<?> data) = 0;
+    prepareVerifySignature(std::shared_ptr<SignatureVerificationDataBase> data)
+        = 0;
 };
 
 } /* namespace transaction */

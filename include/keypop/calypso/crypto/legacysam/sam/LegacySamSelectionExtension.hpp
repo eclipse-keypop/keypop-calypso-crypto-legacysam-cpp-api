@@ -13,6 +13,7 @@
 #include <memory>
 #include <string>
 
+#include "keypop/calypso/crypto/legacysam/GetDataTag.hpp"
 #include "keypop/calypso/crypto/legacysam/sam/LegacySam.hpp"
 #include "keypop/calypso/crypto/legacysam/spi/LegacySamDynamicUnlockDataProviderSpi.hpp"
 #include "keypop/calypso/crypto/legacysam/spi/LegacySamStaticUnlockDataProviderSpi.hpp"
@@ -200,8 +201,8 @@ public:
      * completed, followed by a request to the provider to obtain the needed
      * unlocking data.
      *
-     * @param dynamicUnlockDataProvider An implementation of {@link
-     *        LegacySamDynamicUnlockDataProviderSpi}.
+     * @param dynamicUnlockDataProvider An implementation of
+     * LegacySamDynamicUnlockDataProviderSpi.
      * @param targetSamReader The card reader used to communicate with the
      * target SAM.
      * @return The current instance.
@@ -211,23 +212,70 @@ public:
      * @since 0.4.0
      */
     virtual LegacySamSelectionExtension& setDynamicUnlockDataProvider(
-        LegacySamDynamicUnlockDataProviderSpi dynamicUnlockDataProvider,
-        CardReader targetSamReader);
+        const std::shared_ptr<LegacySamDynamicUnlockDataProviderSpi>
+            dynamicUnlockDataProvider,
+        const std::shared_ptr<CardReader> targetSamReader)
+        = 0;
+
+    /**
+     * Schedules the execution of a "Read Parameters" command for the SAM.
+     *
+     * <p>Once this command is processed, the result is accessible with
+     * LegacySam#getSamParameters().
+     *
+     * @return The current instance.
+     * @since 0.7.0
+     */
+    virtual LegacySamSelectionExtension& prepareReadSamParameters() = 0;
 
     /**
      * Schedules the execution of a "Read Key Parameters" command for a system
      * key.
      *
-     * <p>Once this command is processed, the result is accessible with {@link
-     * LegacySam#getSystemKeyParameter(SystemKeyType)}.
+     * <p>Once this command is processed, the result is accessible with
+     * LegacySam#getSystemKeyParameter(SystemKeyType)}
      *
      * @param systemKeyType The type of system key.
      * @return The current instance.
-     * @throws IllegalArgumentException If the provided argument is null.
+     * @throw IllegalArgumentException If the provided argument is null.
      * @since 0.3.0
      */
-    LegacySamSelectionExtension
-    prepareReadSystemKeyParameters(SystemKeyType systemKeyType);
+    virtual LegacySamSelectionExtension&
+    prepareReadSystemKeyParameters(const SystemKeyType systemKeyType)
+        = 0;
+
+    /**
+     * Schedules the execution of a "Read Key Parameters" command for a work key
+     * referenced by its record number.
+     *
+     * <p>Once this command is processed, the result is accessible with
+     * LegacySam#getWorkKeyParameter(int).
+     *
+     * @param recordNumber The key record number (in range [1..126]).
+     * @return The current instance.
+     * @throw IllegalArgumentException If the provided record number is out of
+     * range.
+     * @since 0.7.0
+     */
+    virtual LegacySamSelectionExtension&
+    prepareReadWorkKeyParameters(const int recordNumber)
+        = 0;
+
+    /**
+     * Schedules the execution of a "Read Key Parameters" command for a work key
+     * referenced by its KIF and KVC.
+     *
+     * <p>Once this command is processed, the result is accessible with
+     * LegacySam#getWorkKeyParameter(uint8_t, uint8_t).
+     *
+     * @param kif The key KIF.
+     * @param kvc The key KVC.
+     * @return The current instance.
+     * @since 0.7.0
+     */
+    virtual LegacySamSelectionExtension&
+    prepareReadWorkKeyParameters(const uint8_t kif, const uint8_t kvc)
+        = 0;
 
     /**
      * Schedules the execution of a "Read Event Counter" and "Read Ceiling"
@@ -240,11 +288,13 @@ public:
      * @param counterNumber The number of the counter whose status is to be read
      * (in range [0..26]).
      * @return The current instance.
-     * @throws IllegalArgumentException If the provided argument is out of
+     * @throw IllegalArgumentException If the provided argument is out of
      * range.
      * @since 0.3.0
      */
-    LegacySamSelectionExtension prepareReadCounterStatus(int counterNumber);
+    virtual LegacySamSelectionExtension&
+    prepareReadCounterStatus(int counterNumber)
+        = 0;
 
     /**
      * Schedules the execution of a "Read Event Counter" and "Read Ceiling"
@@ -253,21 +303,20 @@ public:
      * @return The current instance.
      * @since 0.3.0
      */
-    LegacySamSelectionExtension prepareReadAllCountersStatus();
+    virtual LegacySamSelectionExtension& prepareReadAllCountersStatus() = 0;
 
     /**
      * Schedules the execution of a "Get Data" command for the specified tag.
      *
      * <p>Once this command is processed, data is accessible using dedicated
-     * getter methods, like
-     * {@link LegacySam#getCaCertificate()}.
+     * getter methods, like LegacySam#getCaCertificate().
      *
      * @param tag The tag to retrieve the data for.
      * @return The current instance.
-     * @throws IllegalArgumentException If tag is null.
+     * @throw IllegalArgumentException If tag is null.
      * @since 0.6.0
      */
-    LegacySamSelectionExtension prepareGetData(GetDataTag tag);
+    virtual LegacySamSelectionExtension& prepareGetData(GetDataTag tag) = 0;
 };
 
 } /* namespace sam */

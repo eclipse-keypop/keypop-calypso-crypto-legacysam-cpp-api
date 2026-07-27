@@ -25,18 +25,19 @@ namespace transaction {
 using keypop::calypso::crypto::legacysam::spi::LegacySamRevocationServiceSpi;
 
 /**
- * Contains the input/output data of the {@link
- * FreeTransactionManager#prepareVerifySignature(SignatureVerificationData)}
+ * Contains the input/output data of the
+ * FreeTransactionManager::prepareVerifySignature(SignatureVerificationData)
  * method for traceable signature verification using the "PSO Verify Signature"
  * command.
  *
- * <p>An instance of this interface can be obtained via the method {@link
- * org.eclipse.keypop.calypso.crypto.legacysam.LegacySamApiFactory#createTraceableSignatureVerificationData()}.
+ * <p>An instance of this interface can be obtained via the method
+ * keypop::calypso::crypto::legacysam::LegacySamApiFactory
+ *     ::createTraceableSignatureVerificationData().
  *
  * @since 0.1.0
  */
 class TraceableSignatureVerificationData
-: public SignatureVerificationData<TraceableSignatureVerificationData> {
+: public virtual SignatureVerificationData<TraceableSignatureVerificationData> {
 public:
     /**
      * Indicates that the signature has been computed in "SAM traceability" mode

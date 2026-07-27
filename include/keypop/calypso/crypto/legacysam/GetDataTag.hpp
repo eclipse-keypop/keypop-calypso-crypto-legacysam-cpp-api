@@ -33,6 +33,16 @@ enum class GetDataTag {
     CA_CERTIFICATE
 };
 
+inline const char*
+name(GetDataTag getDataTag) {
+    switch (getDataTag) {
+    case GetDataTag::CA_CERTIFICATE:
+        return "CA_CERTIFICATE";
+    default:
+        return "UNKNOWN";
+    }
+}
+
 } /* namespace legacysam */
 } /* namespace crypto */
 } /* namespace calypso */

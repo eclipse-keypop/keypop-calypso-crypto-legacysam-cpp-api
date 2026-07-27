@@ -13,6 +13,8 @@
 #include <cstdint>
 #include <vector>
 
+#include "keypop/calypso/crypto/legacysam/transaction/TransactionManager.hpp"
+
 namespace keypop {
 namespace calypso {
 namespace crypto {
@@ -22,11 +24,14 @@ namespace transaction {
 /**
  * Transaction manager dedicated to "WRITE" operations.
  *
+ * <p>The write operations defined here can be executed synchronously or
+ * asynchronously.
+ *
  * @param <T> The type of the lowest level child object.
  * @since 0.2.0
  */
 template <typename T>
-class WriteTransactionManager : WriteTransactionManager<T> {
+class WriteTransactionManager : TransactionManager<T> {
 public:
     /**
      * Schedules the execution of a "Write Ceilings" command to write a single
