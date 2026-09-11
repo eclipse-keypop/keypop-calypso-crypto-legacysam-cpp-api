@@ -25,6 +25,9 @@ namespace transaction {
  * etc.).
  *
  * @since 0.1.0
+ * @deprecated This exception is replaced by {@link
+ * keypop::reader::CardCommunicationException} from Keypop Reader API 2.1+. It
+ * will be removed in a future version.
  */
 class SamIOException final : public std::runtime_error {
 public:

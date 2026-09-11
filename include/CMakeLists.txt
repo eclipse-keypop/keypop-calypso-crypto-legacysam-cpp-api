@@ -20,7 +20,7 @@ ADD_LIBRARY(
 
 # Include Keypop Reader CMakeLists details
 INCLUDE("CMakeLists.txt.keypop-calypso-crypto-symmetric")
-INCLUDE("CMakeLists.txt.keypop-card")
+INCLUDE("CMakeLists.txt.keypop-calypso-card")
 INCLUDE("CMakeLists.txt.keypop-reader")
 
 TARGET_INCLUDE_DIRECTORIES(

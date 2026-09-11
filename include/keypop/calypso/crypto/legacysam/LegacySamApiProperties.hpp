@@ -29,7 +29,7 @@ namespace legacysam {
 //      *
 //      * @since 0.1.0
 //      */
-//     static const std::string VERSION = "0.5";
+//     static const std::string VERSION = "1.0";
 
 // private:
 //     /**
@@ -38,7 +38,7 @@ namespace legacysam {
 //     LegacySamApiProperties() {}
 // };
 
-static const std::string& LegacySamApiProperties_VERSION = "0.5";
+static const std::string& LegacySamApiProperties_VERSION = "1.0";
 
 } /* namespace legacysam */
 } /* namespace crypto */
