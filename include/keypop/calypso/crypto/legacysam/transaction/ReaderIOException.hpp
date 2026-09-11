@@ -24,6 +24,9 @@ namespace transaction {
  * Indicates a communication error with the reader of the card or SAM.
  *
  * @since 0.1.0
+ * @deprecated This exception is replaced by {@link
+ * keypop::reader::ReaderCommunicationException} from Keypop Reader API 2.1+.
+ * It will be removed in a future version.
  */
 class ReaderIOException : public std::runtime_error {
 public:
