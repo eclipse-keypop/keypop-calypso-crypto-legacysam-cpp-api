@@ -14,29 +14,25 @@
 #include <stdexcept>
 #include <string>
 
-#include "keyple/core/util/cpp/exception/RuntimeException.hpp"
-
 namespace keypop {
 namespace calypso {
 namespace crypto {
 namespace legacysam {
 namespace transaction {
 
-using keyple::core::util::cpp::exception::RuntimeException;
-
 /**
  * Indicates that a signature is invalid.
  *
  * @since 0.1.0
  */
-class InvalidSignatureException final : public RuntimeException {
+class InvalidSignatureException final : public std::runtime_error {
 public:
     /**
      * @param message The message to identify the exception context.
      * @since 0.1.0
      */
     explicit InvalidSignatureException(const std::string& message)
-    : RuntimeException(message) {
+    : std::runtime_error(message) {
     }
 
     /**
@@ -48,7 +44,7 @@ public:
      */
     InvalidSignatureException(
         const std::string& message, const std::shared_ptr<std::exception> cause)
-    : RuntimeException(message) {
+    : std::runtime_error(message) {
         (void)cause;
     }
 };
