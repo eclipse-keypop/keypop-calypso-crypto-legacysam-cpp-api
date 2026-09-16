@@ -31,7 +31,7 @@ namespace transaction {
  * @since 0.2.0
  */
 template <typename T>
-class WriteTransactionManager : TransactionManager<T> {
+class WriteTransactionManager : public TransactionManager<T> {
 public:
     /**
      * Schedules the execution of a "Write Ceilings" command to write a single
@@ -81,8 +81,7 @@ public:
     virtual T& prepareWriteCounterConfiguration(
         const int counterNumber,
         const int ceilingValue,
-        const CounterIncrementAccess counterIncrementAccess)
-        = 0;
+        const CounterIncrementAccess counterIncrementAccess) = 0;
 };
 
 } /* namespace transaction */

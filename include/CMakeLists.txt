@@ -32,6 +32,17 @@ TARGET_INCLUDE_DIRECTORIES(
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
+TARGET_LINK_LIBRARIES(
+
+    ${LIBRARY_NAME}
+
+    INTERFACE
+
+    Keypop::Calypso::Crypto::Symmetric
+    Keypop::Calypso::Card
+    Keypop::Reader
+)
+
 ADD_LIBRARY(
 
     Keypop::Calypso::Crypto::LegacySam
