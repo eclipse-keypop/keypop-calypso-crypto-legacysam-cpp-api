@@ -1,0 +1,4 @@
+var classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_basic_signature_computation_data =
+[
+    [ "~BasicSignatureComputationData", "classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_basic_signature_computation_data.html#ad2da57e357cfa13f8420411bd5df5e4c", null ]
+];
