@@ -1,5 +1,0 @@
-var searchData=
-[
-  ['withoutbusymode_0',['withoutBusyMode',['../classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_traceable_signature_computation_data.html#a3754aa1755c25bfcd24b555e21b653c5',1,'keypop::calypso::crypto::legacysam::transaction::TraceableSignatureComputationData::withoutBusyMode()'],['../classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_traceable_signature_verification_data.html#a6c2d77dfeda40f13f1757c056656ce17',1,'keypop::calypso::crypto::legacysam::transaction::TraceableSignatureVerificationData::withoutBusyMode()']]],
-  ['withsamtraceabilitymode_1',['withSamTraceabilityMode',['../classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_traceable_signature_computation_data.html#a2c998cc7ad43a7f1ed791606af8c352e',1,'keypop::calypso::crypto::legacysam::transaction::TraceableSignatureComputationData::withSamTraceabilityMode()'],['../classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_traceable_signature_verification_data.html#a658e22d017c3ebe8f71aeeeaf5dac25f',1,'keypop::calypso::crypto::legacysam::transaction::TraceableSignatureVerificationData::withSamTraceabilityMode()']]]
-];
