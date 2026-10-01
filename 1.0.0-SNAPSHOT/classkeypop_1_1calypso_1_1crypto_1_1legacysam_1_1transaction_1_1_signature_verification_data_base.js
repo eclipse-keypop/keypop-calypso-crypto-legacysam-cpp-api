@@ -1,0 +1,4 @@
+var classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_signature_verification_data_base =
+[
+    [ "isSignatureValid", "classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_signature_verification_data_base.html#acef8576e461014a409c866b3344d3aa2", null ]
+];
