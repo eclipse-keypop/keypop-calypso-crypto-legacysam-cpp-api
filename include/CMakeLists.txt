@@ -18,10 +18,10 @@ ADD_LIBRARY(
     INTERFACE
 )
 
-# Include Keypop Reader CMakeLists details
-INCLUDE("CMakeLists.txt.keypop-calypso-crypto-symmetric")
-INCLUDE("CMakeLists.txt.keypop-calypso-card")
-INCLUDE("CMakeLists.txt.keypop-reader")
+# Keypop dependencies are supplied by Conan (requires) via CMakeDeps
+FIND_PACKAGE(keypop-calypso-crypto-symmetric-cpp-api REQUIRED CONFIG)
+FIND_PACKAGE(keypop-calypso-card-cpp-api REQUIRED CONFIG)
+FIND_PACKAGE(keypop-reader-cpp-api REQUIRED CONFIG)
 
 TARGET_INCLUDE_DIRECTORIES(
 
