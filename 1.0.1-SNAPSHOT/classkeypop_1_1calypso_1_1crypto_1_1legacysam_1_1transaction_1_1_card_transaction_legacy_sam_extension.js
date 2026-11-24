@@ -1,0 +1,5 @@
+var classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_card_transaction_legacy_sam_extension =
+[
+    [ "prepareComputeSignature", "classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_card_transaction_legacy_sam_extension.html#a3820dafd7b0f5b1b9c260dcf9df90dc6", null ],
+    [ "prepareVerifySignature", "classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_card_transaction_legacy_sam_extension.html#aa63fe354379bbea35edc66dc27781845", null ]
+];

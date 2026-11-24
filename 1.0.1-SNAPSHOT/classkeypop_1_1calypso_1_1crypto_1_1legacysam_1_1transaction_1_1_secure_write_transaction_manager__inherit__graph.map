@@ -1,0 +1,6 @@
+<map id="keypop::calypso::crypto::legacysam::transaction::SecureWriteTransactionManager" name="keypop::calypso::crypto::legacysam::transaction::SecureWriteTransactionManager">
+<area shape="rect" id="node1" title="Transaction manager dedicated to &quot;WRITE&quot; operations secured by a control SAM." alt="" coords="785,13,1003,69"/>
+<area shape="rect" id="node2" href="$classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_write_transaction_manager.html" title=" " alt="" coords="504,5,737,76"/>
+<area shape="rect" id="node3" href="$classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_transaction_manager.html" title="Common API for all legacy SAM transaction managers." alt="" coords="280,13,456,69"/>
+<area shape="rect" id="node4" title=" " alt="" coords="5,20,232,61"/>
+</map>

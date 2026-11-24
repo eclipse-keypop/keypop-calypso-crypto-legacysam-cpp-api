@@ -1,0 +1,8 @@
+<map id="keypop::calypso::crypto::legacysam::transaction::SignatureVerificationDataBase" name="keypop::calypso::crypto::legacysam::transaction::SignatureVerificationDataBase">
+<area shape="rect" id="node1" title="C++ Non&#45;templated base extraction class." alt="" coords="5,107,209,163"/>
+<area shape="rect" id="node2" href="$classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_signature_verification_data.html" title=" " alt="" coords="269,5,492,76"/>
+<area shape="rect" id="node4" href="$classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_signature_verification_data.html" title=" " alt="" coords="257,100,504,171"/>
+<area shape="rect" id="node6" href="$classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_signature_verification_data.html" title="Contains the input/output data of the FreeTransactionManager#prepareVerifySignature(SignatureVerifica..." alt="" coords="279,195,483,251"/>
+<area shape="rect" id="node3" href="$classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_basic_signature_verification_data.html" title="Contains the input/output data of the FreeTransactionManager::prepareVerifySignature( const std::shar..." alt="" coords="564,13,771,69"/>
+<area shape="rect" id="node5" href="$classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_traceable_signature_verification_data.html" title="Contains the input/output data of the FreeTransactionManager::prepareVerifySignature(SignatureVerific..." alt="" coords="552,107,783,163"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="keypop::calypso::crypto::legacysam::transaction::AsyncTransactionExecutorManager" name="keypop::calypso::crypto::legacysam::transaction::AsyncTransactionExecutorManager">
+<area shape="rect" id="node1" title="Transaction manager dedicated to execute commands prepared asynchronously using AsyncTransactionCreat..." alt="" coords="611,13,843,69"/>
+<area shape="rect" id="node2" href="$classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_transaction_manager.html" title=" " alt="" coords="301,5,563,76"/>
+<area shape="rect" id="node3" title=" " alt="" coords="5,13,253,69"/>
+</map>

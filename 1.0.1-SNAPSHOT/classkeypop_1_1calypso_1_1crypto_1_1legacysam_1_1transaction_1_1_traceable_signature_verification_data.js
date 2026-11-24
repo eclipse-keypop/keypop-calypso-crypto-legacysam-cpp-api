@@ -1,0 +1,5 @@
+var classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_traceable_signature_verification_data =
+[
+    [ "withoutBusyMode", "classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_traceable_signature_verification_data.html#a6c2d77dfeda40f13f1757c056656ce17", null ],
+    [ "withSamTraceabilityMode", "classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_traceable_signature_verification_data.html#a658e22d017c3ebe8f71aeeeaf5dac25f", null ]
+];

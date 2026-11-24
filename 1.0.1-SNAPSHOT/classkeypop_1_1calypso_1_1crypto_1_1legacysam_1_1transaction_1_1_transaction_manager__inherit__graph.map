@@ -1,0 +1,12 @@
+<map id="keypop::calypso::crypto::legacysam::transaction::TransactionManager&lt; T &gt;" name="keypop::calypso::crypto::legacysam::transaction::TransactionManager&lt; T &gt;">
+<area shape="rect" id="node1" title="Common API for all legacy SAM transaction managers." alt="" coords="280,202,456,258"/>
+<area shape="rect" id="node3" href="$classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_read_transaction_manager.html" title=" " alt="" coords="530,5,718,76"/>
+<area shape="rect" id="node5" href="$classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_write_transaction_manager.html" title=" " alt="" coords="504,100,744,171"/>
+<area shape="rect" id="node7" href="$classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_write_transaction_manager.html" title=" " alt="" coords="507,195,741,265"/>
+<area shape="rect" id="node9" href="$classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_read_transaction_manager.html" title="Transaction manager dedicated to &quot;READ&quot; operations." alt="" coords="521,290,727,346"/>
+<area shape="rect" id="node10" href="$classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_write_transaction_manager.html" title="Transaction manager dedicated to &quot;WRITE&quot; operations." alt="" coords="521,370,727,426"/>
+<area shape="rect" id="node2" title=" " alt="" coords="5,209,232,251"/>
+<area shape="rect" id="node4" href="$classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_free_transaction_manager.html" title="Transaction manager dedicated to operations performed without control SAM." alt="" coords="818,13,990,69"/>
+<area shape="rect" id="node6" href="$classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_async_transaction_creator_manager.html" title="Transaction manager dedicated to operations performed asynchronously." alt="" coords="792,107,1016,163"/>
+<area shape="rect" id="node8" href="$classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_secure_write_transaction_manager.html" title="Transaction manager dedicated to &quot;WRITE&quot; operations secured by a control SAM." alt="" coords="795,202,1013,258"/>
+</map>

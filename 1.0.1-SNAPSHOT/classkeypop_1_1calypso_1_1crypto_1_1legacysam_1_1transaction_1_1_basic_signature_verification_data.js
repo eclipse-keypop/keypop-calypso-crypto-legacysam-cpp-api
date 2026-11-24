@@ -1,0 +1,4 @@
+var classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_basic_signature_verification_data =
+[
+    [ "~BasicSignatureVerificationData", "classkeypop_1_1calypso_1_1crypto_1_1legacysam_1_1transaction_1_1_basic_signature_verification_data.html#a993f739f8d4a83954a8f632432171d04", null ]
+];

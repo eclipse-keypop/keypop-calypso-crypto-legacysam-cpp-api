@@ -1,0 +1,5 @@
+<map id="keypop::calypso::crypto::legacysam::transaction::ReaderIOException" name="keypop::calypso::crypto::legacysam::transaction::ReaderIOException">
+<area shape="rect" id="node1" title="Indicates a communication error with the reader of the card or SAM." alt="" coords="5,155,165,211"/>
+<area shape="rect" id="node2" title=" " alt="" coords="24,80,147,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="35,5,136,32"/>
+</map>
